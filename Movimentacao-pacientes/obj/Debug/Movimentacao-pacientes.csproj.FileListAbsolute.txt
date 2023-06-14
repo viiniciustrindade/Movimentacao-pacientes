@@ -1,0 +1,13 @@
+C:\Users\estagiario3\Desktop\Movtech-projeto-hospital\Movimentacao-pacientes\Movimentacao-pacientes\bin\Debug\Movimentacao-pacientes.exe.config
+C:\Users\estagiario3\Desktop\Movtech-projeto-hospital\Movimentacao-pacientes\Movimentacao-pacientes\bin\Debug\Movimentacao-pacientes.exe
+C:\Users\estagiario3\Desktop\Movtech-projeto-hospital\Movimentacao-pacientes\Movimentacao-pacientes\bin\Debug\Movimentacao-pacientes.pdb
+C:\Users\estagiario3\Desktop\Movtech-projeto-hospital\Movimentacao-pacientes\Movimentacao-pacientes\obj\Debug\Movimentacao-pacientes.csproj.AssemblyReference.cache
+C:\Users\estagiario3\Desktop\Movtech-projeto-hospital\Movimentacao-pacientes\Movimentacao-pacientes\obj\Debug\Movimentacao-pacientes.csproj.SuggestedBindingRedirects.cache
+C:\Users\estagiario3\Desktop\Movtech-projeto-hospital\Movimentacao-pacientes\Movimentacao-pacientes\obj\Debug\Movimentacao_pacientes.FrmMovimentacaoPaciente.resources
+C:\Users\estagiario3\Desktop\Movtech-projeto-hospital\Movimentacao-pacientes\Movimentacao-pacientes\obj\Debug\Movimentacao_pacientes.Properties.Resources.resources
+C:\Users\estagiario3\Desktop\Movtech-projeto-hospital\Movimentacao-pacientes\Movimentacao-pacientes\obj\Debug\Movimentacao-pacientes.csproj.GenerateResource.cache
+C:\Users\estagiario3\Desktop\Movtech-projeto-hospital\Movimentacao-pacientes\Movimentacao-pacientes\obj\Debug\Movimentacao-pacientes.csproj.CoreCompileInputs.cache
+C:\Users\estagiario3\Desktop\Movtech-projeto-hospital\Movimentacao-pacientes\Movimentacao-pacientes\obj\Debug\Movimentacao-pacientes.exe
+C:\Users\estagiario3\Desktop\Movtech-projeto-hospital\Movimentacao-pacientes\Movimentacao-pacientes\obj\Debug\Movimentacao-pacientes.pdb
+C:\Users\estagiario3\Desktop\Movtech-projeto-hospital\Movimentacao-pacientes\Movimentacao-pacientes\obj\Debug\Movimentacao_pacientes.SelecionarPaciente.resources
+C:\Users\estagiario3\Desktop\Movtech-projeto-hospital\Movimentacao-pacientes\Movimentacao-pacientes\obj\Debug\Movimentacao_pacientes.BuscarCentroCusto.resources
