@@ -59,5 +59,10 @@ namespace Movimentacao_pacientes
         {
             dtpHora.Value = DateTime.Now;
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
