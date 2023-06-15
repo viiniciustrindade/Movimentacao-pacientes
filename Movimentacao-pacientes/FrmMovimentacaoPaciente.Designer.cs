@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMovimentacaoPaciente));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodPaciente = new System.Windows.Forms.TextBox();
@@ -63,106 +64,96 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 16);
+            this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Paciente";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 50);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 16);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Prontuário";
             // 
             // txtCodPaciente
             // 
-            this.txtCodPaciente.Location = new System.Drawing.Point(109, 15);
-            this.txtCodPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodPaciente.Location = new System.Drawing.Point(82, 12);
             this.txtCodPaciente.Name = "txtCodPaciente";
             this.txtCodPaciente.ReadOnly = true;
-            this.txtCodPaciente.Size = new System.Drawing.Size(57, 22);
+            this.txtCodPaciente.Size = new System.Drawing.Size(44, 20);
             this.txtCodPaciente.TabIndex = 2;
             // 
             // txtCodProntuario
             // 
-            this.txtCodProntuario.Location = new System.Drawing.Point(109, 47);
-            this.txtCodProntuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodProntuario.Location = new System.Drawing.Point(82, 38);
             this.txtCodProntuario.Name = "txtCodProntuario";
-            this.txtCodProntuario.Size = new System.Drawing.Size(57, 22);
+            this.txtCodProntuario.ReadOnly = true;
+            this.txtCodProntuario.Size = new System.Drawing.Size(44, 20);
             this.txtCodProntuario.TabIndex = 3;
             // 
             // dtpData
             // 
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(109, 111);
-            this.dtpData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpData.Location = new System.Drawing.Point(82, 90);
             this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(152, 22);
+            this.dtpData.Size = new System.Drawing.Size(115, 20);
             this.dtpData.TabIndex = 4;
             this.dtpData.Value = new System.DateTime(2023, 6, 14, 11, 49, 38, 0);
             // 
             // txtCodSequencia
             // 
-            this.txtCodSequencia.Location = new System.Drawing.Point(109, 79);
-            this.txtCodSequencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodSequencia.Location = new System.Drawing.Point(82, 64);
             this.txtCodSequencia.Name = "txtCodSequencia";
-            this.txtCodSequencia.Size = new System.Drawing.Size(57, 22);
+            this.txtCodSequencia.Size = new System.Drawing.Size(44, 20);
             this.txtCodSequencia.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 82);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 16);
+            this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Sequência";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 114);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(12, 93);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 16);
+            this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Data";
             // 
             // dtpHora
             // 
             this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHora.Location = new System.Drawing.Point(109, 143);
-            this.dtpHora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpHora.Location = new System.Drawing.Point(82, 116);
             this.dtpHora.Name = "dtpHora";
             this.dtpHora.ShowUpDown = true;
-            this.dtpHora.Size = new System.Drawing.Size(152, 22);
+            this.dtpHora.Size = new System.Drawing.Size(115, 20);
             this.dtpHora.TabIndex = 8;
             this.dtpHora.Value = new System.DateTime(2023, 6, 14, 0, 0, 0, 0);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 148);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(12, 120);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 16);
+            this.label5.Size = new System.Drawing.Size(30, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Hora";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 178);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(12, 145);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 16);
+            this.label6.Size = new System.Drawing.Size(39, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "Motivo";
             // 
@@ -174,127 +165,113 @@
             "Óbito",
             "Alta",
             "Evasão"});
-            this.cbxMotivo.Location = new System.Drawing.Point(109, 175);
-            this.cbxMotivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxMotivo.Location = new System.Drawing.Point(82, 142);
             this.cbxMotivo.Name = "cbxMotivo";
-            this.cbxMotivo.Size = new System.Drawing.Size(152, 24);
+            this.cbxMotivo.Size = new System.Drawing.Size(115, 21);
             this.cbxMotivo.TabIndex = 11;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 212);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(12, 172);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 16);
+            this.label7.Size = new System.Drawing.Size(64, 13);
             this.label7.TabIndex = 12;
             this.label7.Text = "Localização";
             // 
             // txtLocalizacao
             // 
-            this.txtLocalizacao.Location = new System.Drawing.Point(109, 208);
-            this.txtLocalizacao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLocalizacao.Location = new System.Drawing.Point(82, 169);
             this.txtLocalizacao.Name = "txtLocalizacao";
-            this.txtLocalizacao.Size = new System.Drawing.Size(152, 22);
+            this.txtLocalizacao.Size = new System.Drawing.Size(115, 20);
             this.txtLocalizacao.TabIndex = 13;
             // 
             // txtLeito
             // 
-            this.txtLeito.Location = new System.Drawing.Point(109, 240);
-            this.txtLeito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLeito.Location = new System.Drawing.Point(82, 195);
             this.txtLeito.Name = "txtLeito";
-            this.txtLeito.Size = new System.Drawing.Size(152, 22);
+            this.txtLeito.Size = new System.Drawing.Size(115, 20);
             this.txtLeito.TabIndex = 14;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 244);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(12, 198);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 16);
+            this.label8.Size = new System.Drawing.Size(30, 13);
             this.label8.TabIndex = 15;
             this.label8.Text = "Leito";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(268, 148);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(201, 120);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 16);
+            this.label9.Size = new System.Drawing.Size(82, 13);
             this.label9.TabIndex = 16;
             this.label9.Text = "Centro de custo";
             // 
             // txtCentroCusto
             // 
-            this.txtCentroCusto.Location = new System.Drawing.Point(385, 144);
-            this.txtCentroCusto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCentroCusto.Location = new System.Drawing.Point(289, 117);
             this.txtCentroCusto.Name = "txtCentroCusto";
             this.txtCentroCusto.ReadOnly = true;
-            this.txtCentroCusto.Size = new System.Drawing.Size(152, 22);
+            this.txtCentroCusto.Size = new System.Drawing.Size(115, 20);
             this.txtCentroCusto.TabIndex = 17;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(268, 180);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(201, 146);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 16);
+            this.label10.Size = new System.Drawing.Size(75, 13);
             this.label10.TabIndex = 18;
             this.label10.Text = "Clinica médica";
             // 
             // txtClinicaMedica
             // 
-            this.txtClinicaMedica.Location = new System.Drawing.Point(385, 176);
-            this.txtClinicaMedica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtClinicaMedica.Location = new System.Drawing.Point(289, 143);
             this.txtClinicaMedica.Name = "txtClinicaMedica";
-            this.txtClinicaMedica.Size = new System.Drawing.Size(191, 22);
+            this.txtClinicaMedica.Size = new System.Drawing.Size(144, 20);
             this.txtClinicaMedica.TabIndex = 19;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(268, 212);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(201, 172);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 16);
+            this.label11.Size = new System.Drawing.Size(42, 13);
             this.label11.TabIndex = 20;
             this.label11.Text = "Médico";
             // 
             // txtMedico
             // 
-            this.txtMedico.Location = new System.Drawing.Point(385, 208);
-            this.txtMedico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMedico.Location = new System.Drawing.Point(289, 169);
             this.txtMedico.Name = "txtMedico";
-            this.txtMedico.Size = new System.Drawing.Size(191, 22);
+            this.txtMedico.Size = new System.Drawing.Size(144, 20);
             this.txtMedico.TabIndex = 21;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(268, 244);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(201, 198);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 16);
+            this.label12.Size = new System.Drawing.Size(31, 13);
             this.label12.TabIndex = 22;
             this.label12.Text = "CRM";
             // 
             // txtCrm
             // 
-            this.txtCrm.Location = new System.Drawing.Point(385, 240);
-            this.txtCrm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCrm.Location = new System.Drawing.Point(289, 195);
             this.txtCrm.Name = "txtCrm";
-            this.txtCrm.Size = new System.Drawing.Size(191, 22);
+            this.txtCrm.Size = new System.Drawing.Size(144, 20);
             this.txtCrm.TabIndex = 23;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(483, 273);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalvar.Location = new System.Drawing.Point(362, 222);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(93, 28);
+            this.btnSalvar.Size = new System.Drawing.Size(70, 23);
             this.btnSalvar.TabIndex = 24;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -303,10 +280,9 @@
             // lblNomePaciente
             // 
             this.lblNomePaciente.AutoSize = true;
-            this.lblNomePaciente.Location = new System.Drawing.Point(213, 18);
-            this.lblNomePaciente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNomePaciente.Location = new System.Drawing.Point(160, 15);
             this.lblNomePaciente.Name = "lblNomePaciente";
-            this.lblNomePaciente.Size = new System.Drawing.Size(44, 16);
+            this.lblNomePaciente.Size = new System.Drawing.Size(35, 13);
             this.lblNomePaciente.TabIndex = 35;
             this.lblNomePaciente.Text = "Nome";
             this.lblNomePaciente.Visible = false;
@@ -314,10 +290,9 @@
             // lblExibirIdade
             // 
             this.lblExibirIdade.AutoSize = true;
-            this.lblExibirIdade.Location = new System.Drawing.Point(213, 50);
-            this.lblExibirIdade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblExibirIdade.Location = new System.Drawing.Point(160, 41);
             this.lblExibirIdade.Name = "lblExibirIdade";
-            this.lblExibirIdade.Size = new System.Drawing.Size(42, 16);
+            this.lblExibirIdade.Size = new System.Drawing.Size(34, 13);
             this.lblExibirIdade.TabIndex = 36;
             this.lblExibirIdade.Text = "Idade";
             this.lblExibirIdade.Visible = false;
@@ -325,10 +300,9 @@
             // lblExibirMae
             // 
             this.lblExibirMae.AutoSize = true;
-            this.lblExibirMae.Location = new System.Drawing.Point(213, 82);
-            this.lblExibirMae.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblExibirMae.Location = new System.Drawing.Point(160, 67);
             this.lblExibirMae.Name = "lblExibirMae";
-            this.lblExibirMae.Size = new System.Drawing.Size(34, 16);
+            this.lblExibirMae.Size = new System.Drawing.Size(28, 13);
             this.lblExibirMae.TabIndex = 37;
             this.lblExibirMae.Text = "Mãe";
             this.lblExibirMae.Visible = false;
@@ -338,10 +312,10 @@
             this.btnCarregarCentroCusto.FlatAppearance.BorderSize = 0;
             this.btnCarregarCentroCusto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCarregarCentroCusto.Image = global::Movimentacao_pacientes.Properties.Resources.magnifying_glass_icon;
-            this.btnCarregarCentroCusto.Location = new System.Drawing.Point(545, 144);
-            this.btnCarregarCentroCusto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCarregarCentroCusto.Location = new System.Drawing.Point(409, 117);
+            this.btnCarregarCentroCusto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCarregarCentroCusto.Name = "btnCarregarCentroCusto";
-            this.btnCarregarCentroCusto.Size = new System.Drawing.Size(32, 25);
+            this.btnCarregarCentroCusto.Size = new System.Drawing.Size(24, 20);
             this.btnCarregarCentroCusto.TabIndex = 34;
             this.btnCarregarCentroCusto.UseVisualStyleBackColor = true;
             this.btnCarregarCentroCusto.Click += new System.EventHandler(this.btnCarregarCentroCusto_Click);
@@ -351,19 +325,19 @@
             this.btnCarregarPaciente.FlatAppearance.BorderSize = 0;
             this.btnCarregarPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCarregarPaciente.Image = global::Movimentacao_pacientes.Properties.Resources.magnifying_glass_icon;
-            this.btnCarregarPaciente.Location = new System.Drawing.Point(175, 15);
-            this.btnCarregarPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCarregarPaciente.Location = new System.Drawing.Point(131, 12);
+            this.btnCarregarPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCarregarPaciente.Name = "btnCarregarPaciente";
-            this.btnCarregarPaciente.Size = new System.Drawing.Size(32, 25);
+            this.btnCarregarPaciente.Size = new System.Drawing.Size(24, 20);
             this.btnCarregarPaciente.TabIndex = 33;
             this.btnCarregarPaciente.UseVisualStyleBackColor = true;
             this.btnCarregarPaciente.Click += new System.EventHandler(this.btnCarregarPaciente_Click);
             // 
             // FrmMovimentacaoPaciente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 314);
+            this.ClientSize = new System.Drawing.Size(446, 255);
             this.Controls.Add(this.lblExibirMae);
             this.Controls.Add(this.lblExibirIdade);
             this.Controls.Add(this.lblNomePaciente);
@@ -394,8 +368,9 @@
             this.Controls.Add(this.txtCodPaciente);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMovimentacaoPaciente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Movimentação de Paciente";
             this.Load += new System.EventHandler(this.FrmMovimentacaoPaciente_Load);
             this.ResumeLayout(false);

@@ -97,11 +97,6 @@ namespace Movimentacao_pacientes
                 MessageBox.Show("Informe o campo [Clinica médica]", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
-            if (string.IsNullOrEmpty(movimentacao.centroCusto) || string.IsNullOrWhiteSpace(movimentacao.centroCusto))
-            {
-                MessageBox.Show("Informe o campo [Centro de custo]", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
             if (string.IsNullOrEmpty(movimentacao.medico) || string.IsNullOrWhiteSpace(movimentacao.medico))
             {
                 MessageBox.Show("Informe o campo [Médico]", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

@@ -26,11 +26,18 @@ namespace Movimentacao_pacientes
         public string nome { get; private set; }
         public string nomeDaMae { get; private set; }
         public string idadeOf { get; private set; }
+        public string codProntuario { get; private set; }
+        public string localizacao { get; private set; }
+        public string leito { get; private set; }
+        public string centroCusto { get; private set; }
+        public string clinica { get; private set; }
+        public string medico { get; private set; }
+        public string crm { get; private set; }
+
         public void FecharFormulario()
         {
             codigo = txtcodPaciente.Text;
             nome = txtNomePaciente.Text;
-            nomeDaMae = txtMae.Text;
             this.Close();
         }
         private void CarregarUsuariosGrid()
@@ -39,14 +46,21 @@ namespace Movimentacao_pacientes
             using (SqlConnection connection = DaoConnection.GetConexao())
             {
                 PacienteDAO dao = new PacienteDAO(connection);
-                List<PacienteModel> pacientes = dao.GetPacientes();
-                foreach (PacienteModel paciente in pacientes)
+                List<MovModel> movimentacoes = dao.GetPacientes();
+                foreach (MovModel movimento in movimentacoes)
                 {
                     DataGridViewRow row = dadosGrid4.Rows[dadosGrid4.Rows.Add()];
-                    row.Cells[colCodigoPaciente.Index].Value = paciente.codPaciente;
-                    row.Cells[colNomePaciente.Index].Value = paciente.nomePaciente;
-                    row.Cells[colMaePaciente.Index].Value = paciente.mae;
-                    row.Cells[colDataNasc.Index].Value = paciente.dataNasc;
+                    row.Cells[colCodigoPaciente.Index].Value = movimento.PacienteModel.codPaciente;
+                    row.Cells[colCodProntuario.Index].Value = movimento.ProntuarioModel.codProntuario;
+                    row.Cells[colNomePaciente.Index].Value = movimento.nomePaciente.nomePaciente;
+                    row.Cells[colMaePaciente.Index].Value = movimento.maePaciente.mae;
+                    row.Cells[colDataNasc.Index].Value = movimento. dataNasc.dataNasc;
+                    row.Cells[colLocalizacao.Index].Value = movimento.localizacao;
+                    row.Cells[colLeito.Index].Value = movimento.leito;
+                    row.Cells[colCentroCusto.Index].Value = movimento.centroCusto;
+                    row.Cells[colClinicaMedica.Index].Value = movimento.clinicaMedica;
+                    row.Cells[colMedico.Index].Value = movimento.medico;
+                    row.Cells[colCrm.Index].Value = movimento.crm;
                 }
             }
         }
@@ -82,8 +96,15 @@ namespace Movimentacao_pacientes
                 txtcodPaciente.Text = dadosGrid4.Rows[e.RowIndex].Cells[colCodigoPaciente.Index].Value + "";
                 txtNomePaciente.Text = dadosGrid4.Rows[e.RowIndex].Cells[colNomePaciente.Index].Value + "";
                 dtpDataNascimento.Text = dadosGrid4.Rows[e.RowIndex].Cells[colDataNasc.Index].Value + "";
-                txtMae.Text = dadosGrid4.Rows[e.RowIndex].Cells[colMaePaciente.Index].Value + "";
-
+                nomeDaMae = dadosGrid4.Rows[e.RowIndex].Cells[colMaePaciente.Index].Value + "";
+                codProntuario = dadosGrid4.Rows[e.RowIndex].Cells[colCodProntuario.Index].Value + "";
+                localizacao = dadosGrid4.Rows[e.RowIndex].Cells[colLocalizacao.Index].Value + "";
+                leito = dadosGrid4.Rows[e.RowIndex].Cells[colLeito.Index].Value + "";
+                centroCusto = dadosGrid4.Rows[e.RowIndex].Cells[colCentroCusto.Index].Value + "";
+                clinica = dadosGrid4.Rows[e.RowIndex].Cells[colClinicaMedica.Index].Value + "";
+                medico = dadosGrid4.Rows[e.RowIndex].Cells[colMedico.Index].Value + "";
+                crm = dadosGrid4.Rows[e.RowIndex].Cells[colCrm.Index].Value + "";
+                
                 FecharFormulario();
             }
         }

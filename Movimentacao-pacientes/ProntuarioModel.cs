@@ -14,6 +14,5 @@ namespace Movimentacao_pacientes
     {
         [Key()]
         public string codProntuario { get; set; }
-        public string nomePaciente { get;}
     }
 }

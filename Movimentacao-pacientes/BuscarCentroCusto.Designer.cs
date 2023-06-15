@@ -97,7 +97,7 @@
             this.dadosGrid.ReadOnly = true;
             this.dadosGrid.RowHeadersWidth = 51;
             this.dadosGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dadosGrid.Size = new System.Drawing.Size(428, 213);
+            this.dadosGrid.Size = new System.Drawing.Size(365, 132);
             this.dadosGrid.TabIndex = 43;
             this.dadosGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dadosGrid_CellDoubleClick);
             // 
@@ -123,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 275);
+            this.ClientSize = new System.Drawing.Size(385, 194);
             this.Controls.Add(this.txtCodCentroCusto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCentroDeCusto);
@@ -131,6 +131,7 @@
             this.Controls.Add(this.dadosGrid);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BuscarCentroCusto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Centro de Custo";
             this.Load += new System.EventHandler(this.BuscarCentroCusto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dadosGrid)).EndInit();

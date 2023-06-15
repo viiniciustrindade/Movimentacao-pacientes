@@ -24,16 +24,19 @@ namespace Movimentacao_pacientes
         [Column("codPaciente")]
         public string pacienteId { get; set; }
         public virtual PacienteModel PacienteModel { get; set; }
+        public virtual PacienteModel nomePaciente { get; set; }
+        public virtual PacienteModel maePaciente { get; set; }
+        public virtual PacienteModel dataNasc { get; set; }
 
         [ForeignKey("mvtCadCentroCusto")]
         [Column("codCentroCusto")]
         public string centroCustoId { get; set; }
         public virtual CentroCustoModel CentroCustoModel { get; set; }
 
-        /* [ForeignKey("mvHospRegInt")]
-         [Column("codProntuario")]
-         public string prontuarioId { get; set; }
-         public virtual ProntuarioModel ProntuarioModel { get; set; }*/
+        [ForeignKey("mvHospRegInt")]
+        [Column("codProntuario")]
+        public string prontuarioId { get; set; }
+        public virtual ProntuarioModel ProntuarioModel { get; set; }
 
     }
 }
