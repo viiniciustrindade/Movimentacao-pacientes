@@ -57,7 +57,7 @@ namespace Movimentacao_pacientes
                 MessageBox.Show("Informe o campo [Codigo paciente!]", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
-            if (string.IsNullOrEmpty(prontuario.codProntuario) || string.IsNullOrWhiteSpace(paciente.codPaciente))
+            if (string.IsNullOrEmpty(prontuario.codProntuario) || string.IsNullOrWhiteSpace(prontuario.codProntuario))
             {
                 MessageBox.Show("Informe o campo [Codigo prontuario]", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
@@ -79,7 +79,7 @@ namespace Movimentacao_pacientes
             }
             if (string.IsNullOrEmpty(movimentacao.localizacao) || string.IsNullOrWhiteSpace(movimentacao.localizacao))
             {
-                MessageBox.Show("Informe o campo [Localizção]", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Informe o campo [Localização]", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
             if (string.IsNullOrEmpty(movimentacao.leito) || string.IsNullOrWhiteSpace(movimentacao.leito))
@@ -110,6 +110,19 @@ namespace Movimentacao_pacientes
 
             return true;
         }
+        public int Verifica(ProntuarioModel prontuario, PacienteModel paciente)
+        {
+            using (SqlCommand command = Connection.CreateCommand())
+            {
+                StringBuilder sql = new StringBuilder();
+                sql.AppendLine($"SELECT COUNT(codProntuario) FROM mvtMovPac WHERE codProntuario = @codProntuario AND codPaciente = @codPaciente");
+                command.CommandText = sql.ToString();
+                command.Parameters.AddWithValue("@codProntuario", prontuario.codProntuario);
+                command.Parameters.AddWithValue("@codPaciente", paciente.codPaciente);
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                return count;
+            }
+        }
         public void AlterarRegistroProntuario(ProntuarioModel prontuario, MovModel movimentacao)
         {
             using (SqlCommand command = Connection.CreateCommand())
@@ -118,8 +131,8 @@ namespace Movimentacao_pacientes
                 try
                 {
                     StringBuilder sql = new StringBuilder();
-                    sql.AppendLine($"UPDATE mvtHospRegInt SET dataSaida = @dataSaida, horaSaidade = @horaSaida, situacao = @motivo " +
-                        $"localizacao = @localizacao, leito = @leito, CentroDeCusto = @centroDeCusto, clincaMedica = @clinicaMedica, medico = @medico, CRM = @crm " +
+                    sql.AppendLine($"UPDATE mvtHospRegInt SET dataSaida = @dataSaida, horaSaidade = @horaSaida, situacao = @motivo, " +
+                        $"localizacao = @localizacao, leito = @leito, centroDeCusto = @centroDeCusto, clinicaMedica = @clinicaMedica, medico = @medico, CRM = @crm " +
                         $"WHERE codProntuario = @codProntuario");
                     command.CommandText = sql.ToString();
                     command.Parameters.Add(new SqlParameter("@codProntuario", prontuario.codProntuario));

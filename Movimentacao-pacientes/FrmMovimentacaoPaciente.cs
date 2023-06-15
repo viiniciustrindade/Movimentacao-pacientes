@@ -17,6 +17,31 @@ namespace Movimentacao_pacientes
         {
             InitializeComponent();
         }
+        private void LoadId()
+        {
+            using (SqlConnection connection = DaoConnection.GetConexao())
+            {
+                SqlCommand cmd = new SqlCommand("SELECT IDENT_CURRENT('mvtMovPac') + 1", connection);
+                int proximoID = Convert.ToInt32(cmd.ExecuteScalar());
+
+
+                txtCodSequencia.Text = proximoID.ToString();
+            }
+        }
+        public void ApagarCampos()
+        {
+            txtCodPaciente.Text = "";
+            txtCodProntuario.Text = "";
+            dtpData.Value = DateTime.Now;
+            dtpHora.Value = DateTime.Now;
+            cbxMotivo.SelectedIndex = -1;
+            txtLocalizacao.Text = "";
+            txtLeito.Text = "";
+            txtCentroCusto.Text = "";
+            txtClinicaMedica.Text = "";
+            txtMedico.Text = "";
+            txtCrm.Text = "";
+        }
         public void AbrirSelecaoPaciente()
         {
             SelecionarPaciente paciente = new SelecionarPaciente();
@@ -73,6 +98,7 @@ namespace Movimentacao_pacientes
 
         private void FrmMovimentacaoPaciente_Load(object sender, EventArgs e)
         {
+            LoadId();
             dtpHora.Value = DateTime.Now;
         }
 
@@ -107,47 +133,59 @@ namespace Movimentacao_pacientes
                         crm = txtCrm.Text
 
                     });
-                    dao.AlterarRegistroProntuario(new ProntuarioModel()
+                    if (verificaRegistros)
                     {
-                        codProntuario = txtCodProntuario.Text
-                    }, new MovModel()
-                    { 
-                        data = dtpData.Value.Date.ToString(),
-                        hora = dtpHora.Value.ToString(),
-                        motivo = cbxMotivo.Text,
-                        localizacao = txtLocalizacao.Text,
-                        leito = txtLeito.Text,
-                        centroCusto = txtCentroCusto.Text,
-                        clinicaMedica = txtClinicaMedica.Text,
-                        medico = txtMedico.Text,
-                        crm = txtCrm.Text
+                        int count = dao.Verifica(new ProntuarioModel()
+                        {
+                            codProntuario = txtCodProntuario.Text
+                        },
+                        new PacienteModel()
+                        {
+                            codPaciente = txtCodPaciente.Text
+                        });
+                        dao.Salvar(new PacienteModel()
+                        {
 
-                    });
+                            codPaciente = txtCodPaciente.Text
 
-                    dao.Salvar(new PacienteModel()
-                    {
+                        }, new MovModel()
+                        {
+                            data = dtpData.Value.Date.ToString(),
+                            hora = dtpHora.Value.ToString(),
+                            motivo = cbxMotivo.Text,
+                            localizacao = txtLocalizacao.Text,
+                            leito = txtLeito.Text,
+                            centroCusto = txtCentroCusto.Text,
+                            clinicaMedica = txtClinicaMedica.Text,
+                            medico = txtMedico.Text,
+                            crm = txtCrm.Text
 
-                        codPaciente = txtCodPaciente.Text
+                        }, new ProntuarioModel()
+                        {
 
-                    }, new MovModel()
-                    {
-                        data = dtpData.Value.Date.ToString(),
-                        hora = dtpHora.Value.ToString(),
-                        motivo = cbxMotivo.Text,
-                        localizacao = txtLocalizacao.Text,
-                        leito = txtLeito.Text,
-                        centroCusto = txtCentroCusto.Text,
-                        clinicaMedica = txtClinicaMedica.Text,
-                        medico = txtMedico.Text,
-                        crm = txtCrm.Text
+                            codProntuario = txtCodProntuario.Text
 
-                    }, new ProntuarioModel()
-                    {
+                        });
+                        dao.AlterarRegistroProntuario(new ProntuarioModel()
+                        {
+                            codProntuario = txtCodProntuario.Text
+                        }, new MovModel()
+                        {
+                            data = dtpData.Value.Date.ToString(),
+                            hora = dtpHora.Value.ToString(),
+                            motivo = cbxMotivo.Text,
+                            localizacao = txtLocalizacao.Text,
+                            leito = txtLeito.Text,
+                            centroCusto = txtCentroCusto.Text,
+                            clinicaMedica = txtClinicaMedica.Text,
+                            medico = txtMedico.Text,
+                            crm = txtCrm.Text
 
-                        codProntuario = txtCodProntuario.Text
-
-                    });
-
+                        });
+                        MessageBox.Show("Movimentação salva com sucesso!");
+                        LoadId();
+                        ApagarCampos();
+                    }
                 }
             }
             catch (Exception ex)
