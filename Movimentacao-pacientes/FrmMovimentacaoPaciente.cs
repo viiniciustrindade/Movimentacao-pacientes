@@ -24,8 +24,8 @@ namespace Movimentacao_pacientes
                 SqlCommand cmd = new SqlCommand("SELECT IDENT_CURRENT('mvtMovPac') + 1", connection);
                 int proximoID = Convert.ToInt32(cmd.ExecuteScalar());
 
-
                 txtCodSequencia.Text = proximoID.ToString();
+
             }
         }
         public void ApagarCampos()
@@ -41,6 +41,9 @@ namespace Movimentacao_pacientes
             txtClinicaMedica.Text = "";
             txtMedico.Text = "";
             txtCrm.Text = "";
+            lblNomePaciente.Text = "";
+            lblExibirMae.Text = "";
+            lblExibirIdade.Text = "";
         }
         public void AbrirSelecaoPaciente()
         {
@@ -182,6 +185,17 @@ namespace Movimentacao_pacientes
                             crm = txtCrm.Text
 
                         });
+                        if (cbxMotivo.Text == "Óbito")
+                        {
+                            dao.AlterarCadastroPaciente(new PacienteModel()
+                            {
+                                codPaciente = txtCodPaciente.Text
+
+                            }, new MovModel() 
+                            { 
+                                motivo = cbxMotivo.Text
+                            });
+                        }
                         MessageBox.Show("Movimentação salva com sucesso!");
                         LoadId();
                         ApagarCampos();

@@ -22,7 +22,7 @@ namespace Movimentacao_pacientes
             sql.AppendLine("SELECT PAC.codPaciente, PAC.nomePaciente, PAC.nomeMaePaciente, PAC.dataNascPaciente, REG.codProntuario, REG.localizacao, REG.leito, REG.centroDeCusto, REG.clinicaMedica, REG.medico, REG.CRM " +
                            "FROM mvtHospCadPac PAC " +
                            "INNER JOIN mvtHospRegInt REG ON PAC.codPaciente = REG.codPaciente " +
-                           "WHERE REG.situacao = 'internado' OR REG.situacao = 'transferencia'");
+                           "WHERE REG.situacao = 'internado' OR REG.situacao = 'Transferência'");
             command.CommandText = sql.ToString();
             using (SqlDataReader dr = command.ExecuteReader())
             {

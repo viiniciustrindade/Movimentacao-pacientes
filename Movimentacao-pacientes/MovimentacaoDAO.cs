@@ -123,6 +123,29 @@ namespace Movimentacao_pacientes
                 return count;
             }
         }
+        public void AlterarCadastroPaciente(PacienteModel paciente, MovModel movimentacao)
+        {
+            using (SqlCommand command = Connection.CreateCommand())
+            {
+                SqlTransaction t = Connection.BeginTransaction();
+                try
+                {
+                    StringBuilder sql = new StringBuilder();
+                    sql.AppendLine($"UPDATE mvtHospCadPac SET situacao = @situacao WHERE codPaciente = @codPaciente");
+                    command.CommandText = sql.ToString();
+                    command.Parameters.Add(new SqlParameter("@codPaciente", paciente.codPaciente));
+                    command.Parameters.Add(new SqlParameter("@situacao", movimentacao.motivo));
+                    command.Transaction = t;
+                    command.ExecuteNonQuery();
+                    t.Commit();
+                }
+                catch (Exception ex)
+                {
+                    t.Rollback();
+                    throw ex;
+                }
+            }
+        }
         public void AlterarRegistroProntuario(ProntuarioModel prontuario, MovModel movimentacao)
         {
             using (SqlCommand command = Connection.CreateCommand())
