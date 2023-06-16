@@ -77,24 +77,10 @@ namespace Movimentacao_pacientes
                 MessageBox.Show("Informe o campo [Motivo]", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
-            if (string.IsNullOrEmpty(movimentacao.localizacao) || string.IsNullOrWhiteSpace(movimentacao.localizacao))
-            {
-                MessageBox.Show("Informe o campo [Localização]", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-            if (string.IsNullOrEmpty(movimentacao.leito) || string.IsNullOrWhiteSpace(movimentacao.leito))
-            {
-                MessageBox.Show("Informe o campo [Leito]", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
+
             if (string.IsNullOrEmpty(movimentacao.centroCusto) || string.IsNullOrWhiteSpace(movimentacao.centroCusto))
             {
                 MessageBox.Show("Informe o campo [Centro de custo]", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-            if (string.IsNullOrEmpty(movimentacao.clinicaMedica) || string.IsNullOrWhiteSpace(movimentacao.clinicaMedica))
-            {
-                MessageBox.Show("Informe o campo [Clinica médica]", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
             if (string.IsNullOrEmpty(movimentacao.medico) || string.IsNullOrWhiteSpace(movimentacao.medico))

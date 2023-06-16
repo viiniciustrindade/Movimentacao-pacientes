@@ -128,10 +128,7 @@ namespace Movimentacao_pacientes
                         data = dtpData.Value.ToString(),
                         hora = dtpHora.Value.ToString(),
                         motivo = cbxMotivo.Text,
-                        localizacao = txtLocalizacao.Text,
-                        leito = txtLeito.Text,
                         centroCusto = txtCentroCusto.Text,
-                        clinicaMedica = txtClinicaMedica.Text,
                         medico = txtMedico.Text,
                         crm = txtCrm.Text
 
@@ -185,20 +182,17 @@ namespace Movimentacao_pacientes
                             crm = txtCrm.Text
 
                         });
-                        if (cbxMotivo.Text == "Óbito")
-                        {
-                            dao.AlterarCadastroPaciente(new PacienteModel()
-                            {
-                                codPaciente = txtCodPaciente.Text
 
-                            }, new MovModel() 
-                            { 
-                                motivo = cbxMotivo.Text
-                            });
-                        }
+                        dao.AlterarCadastroPaciente(new PacienteModel()
+                        {
+                            codPaciente = txtCodPaciente.Text
+                        }, new MovModel() 
+                        { 
+                            motivo = cbxMotivo.Text
+                        });
+                        
                         MessageBox.Show("Movimentação salva com sucesso!");
-                        LoadId();
-                        ApagarCampos();
+                        NovoMetodo();
                     }
                 }
             }
@@ -206,6 +200,47 @@ namespace Movimentacao_pacientes
             {
                 MessageBox.Show($"Houve um problema ao salvar a movimentação do paciente !\n{ex.Message}");
             }
+        }
+
+        private void cbxMotivo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxMotivo.Text == "Alta")
+            {
+                txtLocalizacao.Text = "";
+                txtLocalizacao.Enabled = false;
+                txtLeito.Text = "";
+                txtLeito.Enabled = false;
+                txtCentroCusto.Text = "Liberado";
+                txtCentroCusto.Enabled = false;
+                btnCarregarCentroCusto.Enabled = false;
+                txtClinicaMedica.Enabled = false;
+            }
+            else if (cbxMotivo.Text == "Óbito")
+            {
+                txtLocalizacao.Text = "Cemitério";
+                txtLocalizacao.Enabled = true;
+                txtLeito.Text = "Túmulo";
+                txtLeito.Enabled = true;
+                txtCentroCusto.Text = "Encerrado";
+                txtCentroCusto.Enabled = false;
+                btnCarregarCentroCusto.Enabled = false;
+                txtClinicaMedica.Enabled = false;
+            }
+        }
+
+        private void Novo_Click(object sender, EventArgs e)
+        {
+            NovoMetodo();
+        }
+        public void NovoMetodo()
+        {
+            ApagarCampos();
+            LoadId();
+            txtLocalizacao.Enabled = true;
+            txtCentroCusto.Enabled = true;
+            txtLeito.Enabled = true;
+            btnCarregarCentroCusto.Enabled = true;
+            txtClinicaMedica.Enabled = true;
         }
     }
 }
