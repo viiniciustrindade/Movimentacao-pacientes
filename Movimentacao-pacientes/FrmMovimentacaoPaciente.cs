@@ -262,8 +262,34 @@ namespace Movimentacao_pacientes
                 if (DateTime.TryParse(data, out dataMinima))
                 {
                     dtpData.MinDate = dataMinima;
+                }
+                else
+                {
+                    dtpData.MinDate = DateTime.Today;
+                    dtpHora.MinDate = DateTime.Today;
+                }
+            }
+        }
+        private void dtpData_ValueChanged(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = DaoConnection.GetConexao())
+            {
+                MovimentacaoDAO dao = new MovimentacaoDAO(connection);
+                string data = dao.VerificaDataSaida(new ProntuarioModel()
+                {
+                    codProntuario = txtCodProntuario.Text
+                });
+                string hora = dao.VerificaHoraSaida(new ProntuarioModel()
+                {
+                    codProntuario = txtCodProntuario.Text
+                });
 
-                    if (dtpData.Value.Date == dataMinima.Date)
+                DateTime dataMinima;
+                if (DateTime.TryParse(data, out dataMinima))
+                {
+                    dtpData.MinDate = dataMinima;
+
+                    if (DateTime.Compare(dtpData.Value.Date, dataMinima.Date) == 0)
                     {
                         DateTime horaMinima;
                         if (DateTime.TryParse(hora, out horaMinima))
@@ -275,9 +301,9 @@ namespace Movimentacao_pacientes
                             dtpHora.MinDate = DateTime.Today;
                         }
                     }
-                    else
+                    else if (DateTime.Compare(dtpData.Value.Date, dataMinima.Date) > 0)
                     {
-                        dtpHora.MinDate = DateTime.MinValue; // Definir a hora mínima como o valor mínimo
+                        dtpHora.MinDate = DateTime.Today;
                     }
                 }
                 else
@@ -286,17 +312,6 @@ namespace Movimentacao_pacientes
                     dtpHora.MinDate = DateTime.Today;
                 }
             }
-        }
-
-        private void dtpHora_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpData_ValueChanged(object sender, EventArgs e)
-        {
-           
-            
         }
     }
 }

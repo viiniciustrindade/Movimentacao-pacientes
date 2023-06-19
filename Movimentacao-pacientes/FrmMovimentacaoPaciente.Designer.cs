@@ -142,7 +142,7 @@
             this.dtpHora.Size = new System.Drawing.Size(115, 20);
             this.dtpHora.TabIndex = 8;
             this.dtpHora.Value = new System.DateTime(2023, 6, 14, 0, 0, 0, 0);
-            this.dtpHora.ValueChanged += new System.EventHandler(this.dtpHora_ValueChanged);
+           // this.dtpHora.ValueChanged += new System.EventHandler(this.dtpHora_ValueChanged);
             // 
             // label5
             // 
