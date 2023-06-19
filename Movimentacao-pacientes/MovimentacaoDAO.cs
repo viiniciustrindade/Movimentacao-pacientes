@@ -50,6 +50,31 @@ namespace Movimentacao_pacientes
                 }
             }
         }
+        public string VerificaDataSaida(ProntuarioModel prontuario)
+        {
+            using (SqlCommand command = Connection.CreateCommand())
+            {
+                StringBuilder sql = new StringBuilder();
+                sql.AppendLine($"SELECT dataSaida FROM mvtHospRegInt WHERE codProntuario = @codProntuario");
+                command.CommandText = sql.ToString();
+                command.Parameters.AddWithValue("@codProntuario", prontuario.codProntuario);
+                string data = Convert.ToString(command.ExecuteScalar());
+                return data;
+            }
+        } 
+        public string VerificaHoraSaida(ProntuarioModel prontuario)
+        {
+            using (SqlCommand command = Connection.CreateCommand())
+            {
+                StringBuilder sql = new StringBuilder();
+                sql.AppendLine($"SELECT horaSaidade FROM mvtHospRegInt WHERE codProntuario = @codProntuario");
+                command.CommandText = sql.ToString();
+                command.Parameters.AddWithValue("@codProntuario", prontuario.codProntuario);
+                string hora = Convert.ToString(command.ExecuteScalar());
+                return hora;
+            }
+        }
+
         public bool Validacoes(PacienteModel paciente, ProntuarioModel prontuario, MovModel movimentacao)
         {
             if (string.IsNullOrEmpty(paciente.codPaciente) || string.IsNullOrWhiteSpace(paciente.codPaciente))

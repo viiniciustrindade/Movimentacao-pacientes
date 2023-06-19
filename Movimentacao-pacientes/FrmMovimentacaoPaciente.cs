@@ -103,6 +103,8 @@ namespace Movimentacao_pacientes
         {
             LoadId();
             dtpHora.Value = DateTime.Now;
+            dtpData.Value = DateTime.Today;
+            
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -242,5 +244,60 @@ namespace Movimentacao_pacientes
             btnCarregarCentroCusto.Enabled = true;
             txtClinicaMedica.Enabled = true;
         }
+        private void txtCodProntuario_TextChanged(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = DaoConnection.GetConexao())
+            {
+                MovimentacaoDAO dao = new MovimentacaoDAO(connection);
+                string data = dao.VerificaDataSaida(new ProntuarioModel()
+                {
+                    codProntuario = txtCodProntuario.Text
+                });
+                string hora = dao.VerificaHoraSaida(new ProntuarioModel()
+                {
+                    codProntuario = txtCodProntuario.Text
+                });
+
+                DateTime dataMinima;
+                if (DateTime.TryParse(data, out dataMinima))
+                {
+                    dtpData.MinDate = dataMinima;
+
+                    if (dtpData.Value.Date == dataMinima.Date)
+                    {
+                        DateTime horaMinima;
+                        if (DateTime.TryParse(hora, out horaMinima))
+                        {
+                            dtpHora.MinDate = horaMinima;
+                        }
+                        else
+                        {
+                            dtpHora.MinDate = DateTime.Today;
+                        }
+                    }
+                    else
+                    {
+                        dtpHora.MinDate = DateTime.MinValue; // Definir a hora mínima como o valor mínimo
+                    }
+                }
+                else
+                {
+                    dtpData.MinDate = DateTime.Today;
+                    dtpHora.MinDate = DateTime.Today;
+                }
+            }
+        }
+
+        private void dtpHora_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpData_ValueChanged(object sender, EventArgs e)
+        {
+           
+            
+        }
     }
 }
+
