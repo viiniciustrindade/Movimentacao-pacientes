@@ -13,9 +13,22 @@ namespace Movimentacao_pacientes
 {
     public partial class FrmMovimentacaoPaciente : Form
     {
-        public FrmMovimentacaoPaciente()
+        public FrmMovimentacaoPaciente(string guardaPaciente, string guardaProntuario, string guardaNomePaciente, string guardaIdadePaciente, string guardaMaePaciente, string guardaLocalizacao,
+               string guardaLeito, string guardaCentroCusto, string guardaClinicaMedica, string guardaMedico, string guardaCrm)
+
         {
             InitializeComponent();
+            txtCodPaciente.Text = guardaPaciente;
+            txtCodProntuario.Text = guardaProntuario;
+            lblNomePaciente.Text = guardaNomePaciente;
+            lblExibirIdade.Text = guardaIdadePaciente;
+            lblExibirMae.Text = guardaMaePaciente;
+            txtLocalizacao.Text = guardaLocalizacao;
+            txtLeito.Text = guardaLeito;
+            txtCentroCusto.Text = guardaCentroCusto;
+            txtClinicaMedica.Text = guardaClinicaMedica;
+            txtMedico.Text = guardaMedico;
+            txtCrm.Text = guardaCrm;
         }
         private void LoadId()
         {

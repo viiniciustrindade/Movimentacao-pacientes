@@ -16,7 +16,7 @@ namespace Movimentacao_pacientes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMovimentacaoPaciente());
+            Application.Run(new FrmMovimentacaoPaciente(null, null, null, null, null, null, null, null, null, null, null));
         }
     }
 }
