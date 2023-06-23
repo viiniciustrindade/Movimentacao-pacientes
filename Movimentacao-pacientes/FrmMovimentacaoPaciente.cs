@@ -29,6 +29,29 @@ namespace Movimentacao_pacientes
             txtClinicaMedica.Text = guardaClinicaMedica;
             txtMedico.Text = guardaMedico;
             txtCrm.Text = guardaCrm;
+
+            LabelVisivel();
+        }
+        private void LabelVisivel()
+        {
+            if (lblNomePaciente.Text != "Nome")
+            {
+                lblNomePaciente.Visible = true;
+            }
+            if (lblExibirMae.Text != "Mãe")
+            {
+                lblExibirMae.Visible = true;
+            }
+            if (lblExibirIdade.Text != "Idade")
+            {
+                lblExibirIdade.Visible = true;
+            }
+            else
+            {
+                lblNomePaciente.Visible = false;
+                lblExibirMae.Visible = false;
+                lblExibirIdade.Visible = false;
+            }
         }
         private void LoadId()
         {
@@ -57,7 +80,9 @@ namespace Movimentacao_pacientes
             lblNomePaciente.Text = "";
             lblExibirMae.Text = "";
             lblExibirIdade.Text = "";
+
         }
+
         public void AbrirSelecaoPaciente()
         {
             SelecionarPaciente paciente = new SelecionarPaciente();
@@ -114,10 +139,7 @@ namespace Movimentacao_pacientes
 
         private void FrmMovimentacaoPaciente_Load(object sender, EventArgs e)
         {
-            LoadId();
-            dtpHora.Value = DateTime.Now;
-            dtpData.Value = DateTime.Today;
-            
+            LoadId();            
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -203,7 +225,7 @@ namespace Movimentacao_pacientes
                             codPaciente = txtCodPaciente.Text
                         }, new MovModel() 
                         { 
-                            motivo = cbxMotivo.Text
+                            motivo = TratativaTranferencia()
                         });
                         
                         MessageBox.Show("Movimentação salva com sucesso!");
@@ -216,7 +238,19 @@ namespace Movimentacao_pacientes
                 MessageBox.Show($"Houve um problema ao salvar a movimentação do paciente !\n{ex.Message}");
             }
         }
-
+        private string TratativaTranferencia()
+        {
+            string situacao;
+            if (cbxMotivo.Text == "Transferência")
+            {
+                situacao = "Internado";
+            }
+            else
+            {
+                situacao = cbxMotivo.Text;
+            }
+            return situacao;
+        }
         private void cbxMotivo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxMotivo.Text == "Alta")
